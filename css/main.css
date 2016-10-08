@@ -4,23 +4,106 @@
 }
 
 body {
+  background-color: lightblue;
   display:flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 h1,
-h2,
-h3 {
+h2 {
+  margin-top: 1.5em;
   text-align: center;
 }
 
-form {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+p {
+  text-align: center;
 }
 
-input {
+.container {
+  background-color: lightgreen;
+  width: 60%;
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content:space-around;;
+}
 
+
+.interaction-form {
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+#input-guess {
+  background-color: lavender;
+  text-align: center;
+  height: 2em;
+  margin: 1em;
+  align-self: center;
+  width: 5em;
+}
+
+#turns-left {
+  text-align: center;
+  height: 2em;
+  margin: 1em;
+  align-self: center;
+  width: 5em;
+}
+
+.btn-guess,
+.btn-restart {
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 10em;
+  height: 2em;
+  margin: .5em;
+
+  align-self: center;
+}
+
+.btn-guess p,
+.btn-restart p {
+  text-align: center;
+}
+
+.btn-guess {
+  background-color: green;
+}
+
+.btn-restart {
+  background-color: red;
+}
+
+.display-results {
+  background-color: tan;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+div#wordOutput {
+  text-align: center;
+  align-self: center;
+  display: flex;
+}
+
+div#wordOutput li {
+  background-color: lavender;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 4px double black;
+  width: 2em;
+  height: 3em;
+  margin: .25em;
+  list-style: none;
+  text-align: center;
 }

@@ -7,19 +7,39 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <!-- <header>
-        <h1>Hangman</h1>
-        <h2>Save your life... or run away!</h2>
+    <header>
+        <h1>Play A Game of Hangman</h1>
     </header>
-    <form>
-      <h3>Guess a word:</h3>
-      <input
-          type="text"
-          name="guess"
-          value="?">
-      <button>
-      </button>
-    </form> -->
+    <main class="container outer">
+      <div class="display-results">
+        <h2 id="dispOutput">Current output:</h2>
+        <div id="wordOutput"><ul></ul></div>
+      </div>
+      <form class="interaction-form">
+        <h2 id="guess">Guess a word:</h2>
+        <input
+            id="input-guess"
+            type="text"
+            name="guess"
+            value=""
+            onkeyup="getChar()">
+        <p>Turns: <span id="turns-left"></span></p>
+        <!-- <button
+            class="btn-guess"
+            type=button
+            name=guess>
+            <p>Guess!
+            </p>
+        </button> -->
+        <button
+            class="btn-restart"
+            name="button"
+            onclick="clearGame()">
+            <p>Start Over
+            </p>
+        </button>
+      </form>
+    </main>
   </body>
   <script src="js/common-words.js"></script>
   <script src="js/app.js"></script>
