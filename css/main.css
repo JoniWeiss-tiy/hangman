@@ -57,7 +57,6 @@ p {
   width: 5em;
 }
 
-.btn-guess,
 .btn-restart {
   border: 1px solid black;
   border-radius: 15px;
@@ -68,13 +67,8 @@ p {
   align-self: center;
 }
 
-.btn-guess p,
 .btn-restart p {
   text-align: center;
-}
-
-.btn-guess {
-  background-color: green;
 }
 
 .btn-restart {
