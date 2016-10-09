@@ -13,7 +13,9 @@
     <main class="container outer">
       <div class="display-results">
         <h2 id="dispOutput">Current output:</h2>
-        <div id="wordOutput"><ul></ul></div>
+        <div id="wordOutput">
+          <ul></ul>
+        </div>
       </div>
       <form class="interaction-form">
         <h2 id="guess">Guess a word:</h2>
@@ -24,10 +26,10 @@
             value=""
             onkeyup="getChar()">
         <p>Turns: <span id="turns-left"></span></p>
+        <p>Guesses so far: <span id="guessed"></span></p>
         <button
             class="btn-restart"
-            name="button"
-            onclick="gameReset()">
+            name="button">
             <p>Start Over
             </p>
         </button>
