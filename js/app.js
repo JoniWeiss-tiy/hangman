@@ -52,11 +52,10 @@ function gameReset() {
         spaceWord += '<li><p> </p></li>';
     }
     msgOutput = spaceWord + "\n";
-    console.log(currWord + " - " + spaceWord);
-    document.querySelector('h2#guess').innerHTML = msgHeading;
+    // document.querySelector('h2#guess').innerHTML = msgHeading;
     document.querySelector('div#wordOutput').innerHTML = msgOutput;
-    // let turnsLeft = document.getElementById('turns-left');
-    // turnsLeft.innerHTML = turnsLeft.innerHTML = numTriesLeft;
+    let turnsLeft = document.getElementById('turns-left');
+    turnsLeft.innerHTML = turnsLeft.innerHTML = numTriesLeft;
     displayMsg();
     return currWord;
 }
@@ -66,6 +65,7 @@ function getChar() {
     let currWordArr = currWord[0].split('');
     let spaceWord;
     let matchWord;
+    let audio;
     let spaceWordArr = [];
     let alphaBet = 'abcdefghijklmnopqrstuvwxyz';
     let currChar =  document.getElementById('input-guess').value.toLowerCase();
