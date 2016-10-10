@@ -22,7 +22,6 @@ function getcurrWord (randomNum) {
 }
 
 function displayMsg(message) {
-    // console.log("DisplayMsg");
     let msg;
     switch (message) {
         case "win":
@@ -39,7 +38,6 @@ function displayMsg(message) {
 }
 
 function gameReset() {
-  console.log("Game Reset!");
     numTriesLeft = maxTries;
     let randomNum = getRandNum(min,max);
     currWord = getcurrWord(randomNum);
@@ -71,7 +69,6 @@ function getChar() {
     let currChar =  document.getElementById('input-guess').value.toLowerCase();
     // Check char for valid input;
     if (alphaBet.indexOf(currChar) !== -1) {
-      console.log("true");
       // Show user all previous valid choices
       let guessed = document.getElementById('guessed');
       guessed.innerHTML = guessed.innerHTML + currChar;
@@ -91,12 +88,10 @@ function getChar() {
       spaceWordArr.length = 0; // empty array
       for (var i = 0 ; i < matchWordArr.length ; i++ ) {
         if (matchWordArr[i] !== undefined ) {
-          console.log("currWordArr: " + currWordArr);
           for (let i = 0; i < currWordArr.length; i++) {
               if (currWordArr[i] === matchWordArr[i]) {
                 // getting undefined unless initialize to '' before using.
                 spaceWordArr[i] = '';
-                console.log("spaceWordArr[i]: " + spaceWordArr[i]);
                 spaceWordArr[i] += '<li><p>' + currWordArr[i] + '</p></li>';
               } else {
                 // getting undefined unless initialize to '' before using.
@@ -106,29 +101,35 @@ function getChar() {
           }
           spaceWord = spaceWordArr.join('');
           matchWord = matchWordArr.join('');
-console.log("spaceWordArr: " + spaceWordArr);
-console.log("spaceWord: " + spaceWord);
-console.log("matchWordArr: " + matchWordArr);
-console.log("matchWord: " + matchWord);
+
           document.querySelector('div#wordOutput').innerHTML = spaceWord;
+
+          function disableInput() {
+            document.getElementById("input-guess").disabled = true;
+          }
 
           if (matchWord === currWord[0] ) {
             displayMsg("win");
+            disableInput();
           } else if (numTriesLeft === 0) {
             displayMsg("lose");
+            disableInput();
+            spaceWordArr.length = 0; // empty array
+            for (let i = 0; i < currWordArr.length; i++) {
+              // getting undefined unless initialize to '' before using.
+              spaceWordArr[i] = '';
+              spaceWordArr[i] += '<li><p>' + currWordArr[i] + '</p></li>';
+            }
+            spaceWord = spaceWordArr.join('');
+            document.querySelector('div#wordOutput').innerHTML = spaceWord;
           }
         }
       }
     } else {
-      console.log("false");
       alert(currChar + " is not a valid character! Try again...");
     }
-
-
-
     // Reset input field
     document.querySelector('input').value = '';
-    console.log("Got " + currChar);
     // findCharInWord(currWord);
     // doesItMatch(currWord,currChar);
     return currChar;
